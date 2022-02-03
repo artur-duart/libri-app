@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".activity_sign_up">
 
         <ImageView
             android:id="@+id/imageBack"
@@ -26,18 +27,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Cadastro"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30sp"
-            android:textStyle="bold"/>
+            style="@style/titleText"
+            android:text="Cadastro"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Crie uma nova conta"
-            android:textColor="@color/colorTextSecondary"
-            android:textSize="18sp"/>
+            style="@style/subtitleText"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -56,34 +53,20 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
+                    android:id="@+id/etNameSignUp"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:background="@null"
                     android:drawableStart="@drawable/ic_baseline_account_circle"
-                    android:drawablePadding="10dp"
-                    android:drawableTint="@color/colorAccent"
                     android:hint="Artur"
-                    android:imeOptions="actionNext"
-                    android:importantForAutofill="no"
                     android:inputType="text"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textColor="@color/colorTextPrimary"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    style="@style/input"/>
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="41dp"
-                android:background="@color/colorWhite"
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
                 android:text="Nome"
-                android:textAllCaps="true"
-                android:textColor="@color/colorTextSecondary"
-                android:textStyle="bold"
+                style="@style/inputName"
                 app:layout_constraintBottom_toTopOf="@id/layoutName"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/layoutName"/>
@@ -107,34 +90,20 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
+                    android:id="@+id/etSurnameSignUp"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:background="@null"
                     android:drawableStart="@drawable/ic_baseline_account_circle"
-                    android:drawablePadding="10dp"
-                    android:drawableTint="@color/colorAccent"
                     android:hint="Duarte"
-                    android:imeOptions="actionNext"
-                    android:importantForAutofill="no"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textColor="@color/colorTextPrimary"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:inputType="text"/>
+                    android:inputType="text"
+                    style="@style/input"/>
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="41dp"
-                android:background="@color/colorWhite"
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
                 android:text="Sobrenome"
-                android:textAllCaps="true"
-                android:textColor="@color/colorTextSecondary"
-                android:textStyle="bold"
+                style="@style/inputName"
                 app:layout_constraintBottom_toTopOf="@id/layoutSurname"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/layoutSurname"/>
@@ -158,34 +127,21 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
+                    android:id="@+id/etUserSignUp"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:background="@null"
                     android:drawableStart="@drawable/ic_baseline_account_circle"
-                    android:drawablePadding="10dp"
                     android:drawableTint="@color/colorAccent"
                     android:hint="ArtD14"
-                    android:imeOptions="actionNext"
-                    android:importantForAutofill="no"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textColor="@color/colorTextPrimary"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:inputType="text"/>
+                    android:inputType="text"
+                    style="@style/input"/>
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="41dp"
-                android:background="@color/colorWhite"
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
                 android:text="Usuário"
-                android:textAllCaps="true"
-                android:textColor="@color/colorTextSecondary"
-                android:textStyle="bold"
+                style="@style/inputName"
                 app:layout_constraintBottom_toTopOf="@id/layoutUsername"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/layoutUsername"/>
@@ -209,34 +165,21 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
+                    android:id="@+id/etEmailSignUp"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:background="@null"
                     android:drawableStart="@drawable/ic_email"
-                    android:drawablePadding="10dp"
                     android:drawableTint="@color/colorAccent"
                     android:hint="seu@email.com"
-                    android:imeOptions="actionNext"
-                    android:importantForAutofill="no"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textColor="@color/colorTextPrimary"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="textEmailAddress"
+                    style="@style/input"/>
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="41dp"
-                android:background="@color/colorWhite"
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
                 android:text="Email"
-                android:textAllCaps="true"
-                android:textColor="@color/colorTextSecondary"
-                android:textStyle="bold"
+                style="@style/inputName"
                 app:layout_constraintBottom_toTopOf="@id/layoutSignUpEmail"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/layoutSignUpEmail"/>
@@ -260,34 +203,21 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <EditText
+                    android:id="@+id/etPasswordSignUp"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:background="@null"
                     android:drawableStart="@drawable/ic_lock"
-                    android:drawablePadding="10dp"
                     android:drawableTint="@color/colorAccent"
                     android:hint="****************"
-                    android:imeOptions="actionNext"
-                    android:importantForAutofill="no"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textColor="@color/colorTextPrimary"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword"
+                    style="@style/input"/>
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="41dp"
-                android:background="@color/colorWhite"
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
                 android:text="Senha"
-                android:textAllCaps="true"
-                android:textColor="@color/colorTextSecondary"
-                android:textStyle="bold"
+                style="@style/inputName"
                 app:layout_constraintBottom_toTopOf="@id/layoutSignUpPassword"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/layoutSignUpPassword"/>
@@ -298,14 +228,8 @@
             android:id="@+id/btnSignUp"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/background_button"
             android:text="Cadastrar"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            style="@style/primaryBtn"/>
 
         <LinearLayout
             android:layout_width="match_parent"
