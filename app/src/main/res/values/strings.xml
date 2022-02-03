@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LIBRI</string>
+    <string name="title_sign_up">Cadastro de Usuário</string>
+    <string name="message_sign_up">Você está cadastrando um Usuário!</string>
+    <string name="save">Salvar</string>
+    <string name="cancel">Cancelar</string>
 </resources>

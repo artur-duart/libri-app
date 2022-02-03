@@ -62,6 +62,9 @@ public class SQLHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
 
         try {
+
+            sqLiteDatabase.beginTransaction();
+
             ContentValues values = new ContentValues();
 
             values.put("nome", nome);
@@ -74,16 +77,16 @@ public class SQLHelper extends SQLiteOpenHelper {
             sqLiteDatabase.insertOrThrow("tbl_usuario", null, values);
             sqLiteDatabase.setTransactionSuccessful();
 
+            return true;
+
         } catch (Exception e) {
             Log.d("SQLITE-", e.getMessage());
             return false;
 
         } finally {
-            if (sqLiteDatabase.isOpen()){
+            if (sqLiteDatabase.isOpen()) {
                 sqLiteDatabase.endTransaction();
             }
-
-
         }
     }
 }
