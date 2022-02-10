@@ -19,7 +19,7 @@
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -39,19 +39,19 @@
                 android:layout_height="80dp"
                 android:layout_marginTop="50dp"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/logo"/>
+                android:src="@drawable/logo" />
 
             <TextView
+                style="@style/titleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bem-Vindo de Volta"
-                style="@style/titleText"/>
+                android:text="Bem-Vindo de Volta" />
 
             <TextView
+                style="@style/subtitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Faça login para continuar"
-                style="@style/subtitleText"/>
+                android:text="Faça login para continuar" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -71,22 +71,22 @@
 
                     <EditText
                         android:id="@+id/etEmailLogin"
+                        style="@style/input"
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
-                        android:hint="seu@email.com"
                         android:drawableStart="@drawable/ic_email"
-                        android:inputType="textEmailAddress"
-                        style="@style/input"/>
+                        android:hint="seu@email.com"
+                        android:inputType="textEmailAddress" />
                 </LinearLayout>
 
                 <TextView
+                    style="@style/inputName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Email"
-                    style="@style/inputName"
                     app:layout_constraintBottom_toTopOf="@id/layoutEmail"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/layoutEmail"/>
+                    app:layout_constraintTop_toTopOf="@id/layoutEmail" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -108,23 +108,23 @@
 
                     <EditText
                         android:id="@+id/etPasswordLogin"
+                        style="@style/input"
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
                         android:drawableStart="@drawable/ic_lock"
                         android:hint="****************"
-                        android:inputType="textPassword"
-                        style="@style/input"/>
+                        android:inputType="textPassword" />
                 </LinearLayout>
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:text="Password"
                     style="@style/inputName"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:text="Password"
                     app:layout_constraintBottom_toTopOf="@id/layoutName"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/layoutName"/>
+                    app:layout_constraintTop_toTopOf="@id/layoutName" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -132,20 +132,20 @@
                 android:id="@+id/textForgotPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Esqueceu sua senha?"
                 android:layout_gravity="end"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="30dp"
+                android:text="Esqueceu sua senha?"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16dp"
-                android:textStyle="bold"/>
-            
+                android:textStyle="bold" />
+
             <Button
                 android:id="@+id/btnSignIn"
+                style="@style/primaryBtn"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:text="Entrar"
-                style="@style/primaryBtn"/>
+                android:text="Entrar" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -160,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:text="Não tem uma conta?"
                     android:textColor="@color/colorTextSecondary"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp" />
 
                 <TextView
                     android:id="@+id/textCreateAccount"
@@ -170,7 +170,7 @@
                     android:text="Cadastre-se"
                     android:textColor="@color/colorPrimary"
                     android:textSize="17dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 

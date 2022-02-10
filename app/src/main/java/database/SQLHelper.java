@@ -14,7 +14,7 @@ public class SQLHelper extends SQLiteOpenHelper {
      * ATRIBUTOS DA CLASSE DE CONNECTION
      **/
     private static final String DB_NAME = "libri";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
     private static SQLHelper INSTANCE;
 
     /**
@@ -54,6 +54,16 @@ public class SQLHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+        sqLiteDatabase.execSQL("CREATE TABLE tbl_livro" +
+                "(cod_livro INTEGER PRIMARY KEY," +
+                "cod_usuario INTEGER," +
+                "titulo TEXT," +
+                "descricao TEXT," +
+                "foto TEXT," +
+                "created_date DATETIME," +
+                "FOREIGN KEY (cod_usuario) REFERENCES tbl_usuario(cod_usuario))");
+
+        Log.d("SQLITE-", "BANCO DE DADOS CRIADO! - " + DB_VERSION);
     }
 
     public boolean addUser(String nome, String sobrenome, String email, String login, String senha, String created_date) {
@@ -89,4 +99,40 @@ public class SQLHelper extends SQLiteOpenHelper {
             }
         }
     }
+
+    /** INSERCAO DE LIVROS **/
+
+    public boolean addBook(int cod_usuario, String titulo, String descricao, String foto, String created_date) {
+
+        //Configura o SQLITE para escrita:
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+
+        try {
+
+            sqLiteDatabase.beginTransaction();
+
+            ContentValues values = new ContentValues();
+
+            values.put("cod_usuario", cod_usuario);
+            values.put("titulo", titulo);
+            values.put("descricao", descricao);
+            values.put("foto", foto);
+            values.put("created_date", created_date);
+
+            sqLiteDatabase.insertOrThrow("tbl_livro", null, values);
+            sqLiteDatabase.setTransactionSuccessful();
+
+            return true;
+
+        } catch (Exception e) {
+            Log.d("SQLITE-", e.getMessage());
+            return false;
+
+        } finally {
+            if (sqLiteDatabase.isOpen()) {
+                sqLiteDatabase.endTransaction();
+            }
+        }
+    }
+
 }

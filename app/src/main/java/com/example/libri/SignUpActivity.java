@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import database.SQLHelper;
+import helpers.DateFormat;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -60,7 +61,11 @@ public class SignUpActivity extends AppCompatActivity {
                         String user = etUserSignUp.getText().toString();
                         String password = etPasswordSignUp.getText().toString();
 
-                        boolean userSignup = SQLHelper.getInstance(SignUpActivity.this).addUser(name, surname, email, user, password, "03/02/2022 00:00:00");
+                        /** DATA DE INSERÇÃO DO USUÁRIO **/
+                        DateFormat df = new DateFormat();
+                        String created_date = df.getDateFormat();
+
+                        boolean userSignup = SQLHelper.getInstance(SignUpActivity.this).addUser(name, surname, email, user, password, created_date);
 
                         if (userSignup) {
 

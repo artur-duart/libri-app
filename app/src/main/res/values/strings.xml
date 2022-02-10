@@ -4,4 +4,6 @@
     <string name="message_sign_up">Você está cadastrando um Usuário!</string>
     <string name="save">Salvar</string>
     <string name="cancel">Cancelar</string>
+    <string name="title_book_register">Cadastro de Livro</string>
+    <string name="message_book_register">Você está cadastrando um livro!</string>
 </resources>
