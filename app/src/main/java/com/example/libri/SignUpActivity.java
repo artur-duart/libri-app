@@ -70,11 +70,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                     })
 
-                    .setNegativeButton(R.string.cancel, (dialog1, which) -> {
-
-                        Toast.makeText(this, "AAAAAAAA", Toast.LENGTH_LONG).show();
-
-                    }).create();
+                    .setNegativeButton(R.string.cancel, (dialog1, which) -> {}).create();
 
             dialog.show();
 
