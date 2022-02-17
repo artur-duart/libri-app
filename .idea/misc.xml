@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable/ic_book.xml" value="0.5765625" />
         <entry key="app/src/main/res/drawable/ic_email.xml" value="0.5765625" />
         <entry key="app/src/main/res/layout/activity_book_registration.xml" value="0.34322916666666664" />
+        <entry key="app/src/main/res/layout/activity_books_feed.xml" value="0.41458333333333336" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5671794871794872" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.5671794871794872" />
       </map>

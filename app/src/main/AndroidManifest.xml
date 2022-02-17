@@ -10,13 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LIBRI">
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SignUpActivity"
+            android:name=".BooksFeedActivity"
             android:exported="false" />
         <activity
             android:name=".BookRegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false">
+
+            <!-- <meta-data -->
+            <!-- android:name=".android.support.PARENT_ACTIVITY" -->
+            <!-- android:value=".MainActivity" -->
+            <!-- /> -->
+        </activity>
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

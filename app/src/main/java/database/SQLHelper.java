@@ -2,6 +2,7 @@ package database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -100,7 +101,9 @@ public class SQLHelper extends SQLiteOpenHelper {
         }
     }
 
-    /** INSERCAO DE LIVROS **/
+    /**
+     * INSERCAO DE LIVROS
+     **/
 
     public boolean addBook(int cod_usuario, String titulo, String descricao, String foto, String created_date) {
 
@@ -133,6 +136,48 @@ public class SQLHelper extends SQLiteOpenHelper {
                 sqLiteDatabase.endTransaction();
             }
         }
+    }//FECHAMENTO DO MÉTODO addBook
+
+    /**
+     * REALIZAR LOGIN
+     **/
+    public int login(String email, String senha) {
+
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+
+        int cod_usuario = 0;
+
+        Cursor cursor = sqLiteDatabase.rawQuery(
+                "SELECT * FROM tbl_usuario WHERE email = ? AND senha = ?",
+                new String[]{email, senha}
+        );
+
+        try {
+
+            if (cursor.moveToFirst()) {
+
+                cod_usuario = cursor.getInt(cursor.getColumnIndex("cod_usuario"));
+                return cod_usuario;
+
+            }
+
+            return 0;
+
+        } catch (Exception e) {
+
+            Log.d("SQLITE-", e.getMessage());
+
+        } finally {
+
+            if (cursor != null && !cursor.isClosed()) {
+
+                cursor.close();
+
+            }
+
+        }
+
+        return 0;
     }
 
 }
