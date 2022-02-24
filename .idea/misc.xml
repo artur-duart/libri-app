@@ -16,6 +16,8 @@
         <entry key="app/src/main/res/layout/activity_books_feed.xml" value="0.41458333333333336" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5671794871794872" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.5671794871794872" />
+        <entry key="app/src/main/res/layout/book_item_container.xml" value="0.5760416666666667" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.5760416666666667" />
       </map>
     </option>
   </component>

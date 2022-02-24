@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menuBookRegistration"
+        android:title="Cadastrar Livros"/>
+
+    <item android:id="@+id/menuBookFeed"
+        android:title="Feed de Livros"/>
+
+    <item android:id="@+id/menuSignOut"
+        android:title="Sair"/>
+
+</menu>
+

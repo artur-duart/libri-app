@@ -29,6 +29,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        getSupportActionBar().hide();
 
         /** CAPTURA DOS COMPONENTES GRÁFICOS DA ACTIVITY **/
         etNameSignUp = findViewById(R.id.etNameSignUp);
