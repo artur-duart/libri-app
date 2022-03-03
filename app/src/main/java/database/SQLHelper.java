@@ -9,6 +9,12 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Book;
+import model.Item;
+
 public class SQLHelper extends SQLiteOpenHelper {
 
     /**
@@ -174,10 +180,50 @@ public class SQLHelper extends SQLiteOpenHelper {
                 cursor.close();
 
             }
+        }
+        return 0;
+    }//FIM DO MÉTODO DE LOGIN
+
+    /**
+     * LISTAGEM DE LIVROS
+     **/
+    public List<Item> listBooks() {
+        List<Item> items = new ArrayList<>();
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM tbl_livros WHERE cod_usuario = ?", new String[]{"1"});
+
+        try {
+
+            if (cursor.moveToFirst()) {
+
+                do {
+                    Book book = new Book(
+                            cursor.getString(cursor.getColumnIndex("titulo")),
+                            cursor.getString(cursor.getColumnIndex("descricao"))
+                    );
+
+                    items.add(new Item(0, book));
+
+                }while(cursor.moveToNext());
+
+            }
+
+        } catch (Exception e) {
+
+            Log.d("SQLIERROR:", e.getMessage());
+
+        } finally {
+
+            if (cursor != null && !cursor.isClosed()){
+
+                cursor.close();
+
+            }
+
+            return items;
 
         }
-
-        return 0;
     }
-
-}
+}//FECHAMENTO DA CKASSE

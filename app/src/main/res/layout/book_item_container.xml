@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvBookTitleText"
+            android:id="@+id/tvBookTitle"
             style="@style/titleText"
             android:textSize="18sp"
             android:textAlignment="center"/>
@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvBookDescriptionTest"
+            android:id="@+id/tvBookDescription"
             android:textColor="@android:color/black"
             android:textSize="14sp"/>
 
