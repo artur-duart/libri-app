@@ -192,7 +192,7 @@ public class SQLHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM tbl_livros WHERE cod_usuario = ?", new String[]{"1"});
+        Cursor cursor = db.rawQuery("SELECT * FROM tbl_livro WHERE cod_usuario = ?", new String[]{"1"});
 
         try {
 

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import database.SQLHelper;
 import model.Book;
 import model.Item;
 
@@ -24,6 +26,11 @@ public class BooksFeedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books_feed);
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerview);
+        List<Item> item = SQLHelper.getInstance(this).listBooks();
+
+        recyclerView.setAdapter(new BookAdapter(item));
     }
 
     /**
@@ -77,22 +84,36 @@ public class BooksFeedActivity extends AppCompatActivity {
         @NonNull
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            
-            if (viewType == 0){
-                return new BookAdapter.BookViewHolder();
-            }
 
+            if (viewType == 0) {
+                return new BookAdapter.BookViewHolder(
+                        LayoutInflater.from(parent.getContext()).inflate(R.layout.book_item_container, parent, false)
+                );
+            }
             return null;
         }
 
         @Override
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
+            if (getItemViewType(position) == 0) {
+                //TIPO LIVRO
+
+                Book book = (Book) item.get(position).getObject();
+                ((BookAdapter.BookViewHolder) holder).setBookDate(book);
+            }
+        }
+
+        /**
+         * MÉTODO AUXILIAR DE MANIPULAÇÃO DE POSITION PARA O MÉTODO onBindViewHolder
+         **/
+        public int getItemViewType(int position) {
+            return item.get(position).getType();
         }
 
         @Override
         public int getItemCount() {
-            return 0;
+            return item.size();
         }
 
         /**
